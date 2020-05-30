@@ -26,7 +26,7 @@ const Navbar = (props) => {
           <Brand style={linkAnimation} />
           <NavLinks style={linkAnimation}>
             <a href="/">Home</a>
-            <a href="/blog/">Blog</a>
+            <a href="#/blog/">Blog</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
@@ -51,12 +51,8 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(39, 102, 103, 1) 0%,
-    rgba(64, 145, 78, 1) 100%
-  );
-  z-index: 1;
+  background: transparent;
+  // z-index: 1;
   font-size: 1.4rem;
 `;
 
@@ -75,8 +71,9 @@ const NavLinks = styled(animated.ul)`
   margin: auto 0;
 
   & a {
-    color: #ececda;
-    font-family: "Inconsolata", monospace;
+    font-size: 18px;
+    color: #eeeeee;
+    font-family: "Share";
     border-bottom: 1px solid transparent;
     margin: 0 1.5rem;
     transition: all 300ms linear 0s;
@@ -84,8 +81,8 @@ const NavLinks = styled(animated.ul)`
     cursor: pointer;
 
     &:hover {
-      color: #fdcb6e;
-      border-bottom: 1px solid #fdcb6e;
+      color: #286067;
+      border-bottom: 1px solid #286067;
     }
 
     @media (max-width: 768px) {

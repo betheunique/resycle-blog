@@ -7,7 +7,7 @@ export const config = {
   githubUserName: "betheunique",
 
   // Your Github Repo Name Where You Have your issues as Blog
-  githubRepo: "blog",
+  githubRepo: "resycle-blog",
 
   // Set it to true if you have a Github app to add to this project
   // and fill the client ID & secret
@@ -15,7 +15,7 @@ export const config = {
   OAuthClientID: "Iv1.9f40fd53257d4102",
   OAuthSecret: "cc3db76ffe9848c92d83172807eececa79f0eb22",
 
-  title: "Oarraylabs | Offset between Idea to Market",
+  title: "Resycle.io | Track, Offset, Minimize & Earn",
 
   description: "On a mission to reduce the carbon footprint on the planet",
 

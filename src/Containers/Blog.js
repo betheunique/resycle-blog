@@ -7,6 +7,7 @@ import { Header } from "../Components/Header";
 import { Loader } from "../Components/Common";
 import { BlogContainer } from "../Components/Blog";
 import { Card } from "../Components/Blog/Card";
+import { VideoContainer } from "../Components/Home/Video";
 
 const GET_POSTS = gql`
 {
@@ -57,6 +58,7 @@ const Blog = () => {
   return (
     <>
       <Header />
+      <VideoContainer />
       <BlogContainer>
         {loading ? (
           <Loader />

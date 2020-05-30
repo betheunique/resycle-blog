@@ -25,7 +25,7 @@ const CollapseMenu = (props) => {
             </a>
           </li>
           <li>
-            <a href="/blog/" onClick={props.handleNavbar}>
+            <a href="#/blog/" onClick={props.handleNavbar}>
               Blog
             </a>
           </li>
@@ -39,11 +39,7 @@ const CollapseMenu = (props) => {
 export default CollapseMenu;
 
 const CollapseWrapper = styled(animated.div)`
-  background: linear-gradient(
-    0deg,
-    rgba(39, 102, 103, 1) 0%,
-    rgba(64, 145, 78, 1) 100%
-  );
+  background-color: #286067;
   position: fixed;
   top: 8rem;
   left: 0;
@@ -61,16 +57,16 @@ const NavLinks = styled.ul`
   }
 
   & a {
-    font-size: 1.4rem;
-    font-family: "Inconsolata", monospace;
+    font-size: 18px;
+    font-family: "Share";
     line-height: 2;
-    color: #ececda;
+    color: #eeeeee;
     text-decoration: none;
     cursor: pointer;
 
     &:hover {
-      color: #fdcb6e;
-      border-bottom: 1px solid #fdcb6e;
+      color: #286067;
+      border-bottom: 1px solid #286067;
     }
   }
 `;
