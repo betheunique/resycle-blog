@@ -25,7 +25,7 @@ const CollapseMenu = (props) => {
             </a>
           </li>
           <li>
-            <a href="#/blog/" onClick={props.handleNavbar}>
+            <a href="/blog/" onClick={props.handleNavbar}>
               Blog
             </a>
           </li>
@@ -57,7 +57,7 @@ const NavLinks = styled.ul`
   }
 
   & a {
-    font-size: 18px;
+    font-size: 17px;
     font-family: "Share";
     line-height: 2;
     color: #eeeeee;

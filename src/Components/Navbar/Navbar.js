@@ -26,7 +26,7 @@ const Navbar = (props) => {
           <Brand style={linkAnimation} />
           <NavLinks style={linkAnimation}>
             <a href="/">Home</a>
-            <a href="#/blog/">Blog</a>
+            <a href="/blog/">Blog</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
@@ -71,7 +71,7 @@ const NavLinks = styled(animated.ul)`
   margin: auto 0;
 
   & a {
-    font-size: 18px;
+    font-size: 17px;
     color: #eeeeee;
     font-family: "Share";
     border-bottom: 1px solid transparent;
