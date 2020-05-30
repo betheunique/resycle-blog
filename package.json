@@ -1,7 +1,7 @@
 {
-  "name": "blog",
-  "homepage": "https://oarraylabs.com",
-  "version": "0.1.1",
+  "name": "resycle-io",
+  "homepage": "http://resycle.io",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
