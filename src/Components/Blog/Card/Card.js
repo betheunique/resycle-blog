@@ -19,8 +19,8 @@ export const Card = ({ blog }) => {
   const openBlog = (title, number) => {
     title = title.replace(/\s+/g, "-").toLowerCase();
     title = title.replace(/\,/g, "");
-    title = title.replace(/\:/g, "-");
-    title = title.replace(/\./g, "-");
+    title = title.replace(/\:/g, "");
+    title = title.replace(/\./g, "");
     history.push(`/blog/${title}/${number}`);
   };
 
