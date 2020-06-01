@@ -28,7 +28,7 @@ const Application = () => {
           <meta name="theme-color" content={config.header.backgroundColor} />
           <meta
             property="og:image"
-            content={require("../src/assets/img/linkedin_banner_image.png")}
+            content="https://raw.githubusercontent.com/betheunique/resycle-images/master/logo.png"
           />
         </Helmet>
         <ApolloProvider client={client}>
