@@ -23,6 +23,8 @@ const Application = () => {
           <title>{config.title}</title>
           <meta charSet="utf-8" />
           <meta name="description" content={config.description} />
+          <meta property="og:title" content={config.title} />
+          <meta property="og:description" content={config.description} />
           <meta name="theme-color" content={config.header.backgroundColor} />
           <meta
             property="og:image"
