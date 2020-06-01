@@ -20,7 +20,6 @@ const Application = () => {
     <ThemeProvider theme={theme}>
       <>
         <HeadProvider>
-          {/* <div className="Home"> */}
           <Title>{config.title}</Title>
           <Meta charSet="utf-8" />
           <Meta
