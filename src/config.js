@@ -28,6 +28,6 @@ export const config = {
 
   // Email properties
   email: {
-    url: "https://function.resycle.io/.netlify/functions/send-email",
+    url: "http://www.resycle.io/.netlify/functions/send-email",
   },
 };
