@@ -1,7 +1,7 @@
 {
   "name": "resycle-io",
   "homepage": "http://resycle.io",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -23,7 +23,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
-    "react-helmet": "^5.2.1",
+    "react-head": "^3.3.0",
     "react-icons": "^3.10.0",
     "react-reactions": "github:randomdipesh/react-reactions",
     "react-router-dom": "^5.2.0",

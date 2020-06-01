@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Helmet } from "react-helmet";
+import { HeadProvider, Meta } from "react-head";
 import moment from "moment";
 import Markdown from "markdown-to-jsx";
 import readingTime from "reading-time";
@@ -191,10 +191,9 @@ export default function BlogHome() {
 
   return (
     <>
-      <Helmet>
-        <meta name="title" property="og:title" content={post.title} />
-        {/* <meta name="description" property="og:description" content={post.body} /> */}
-      </Helmet>
+      <HeadProvider>
+        <Meta name="title" property="og:title" content={config.title} />
+      </HeadProvider>
       {post.title && (
         <PostContainer>
           <BackButton onClick={() => onBackClick()}>Back</BackButton>

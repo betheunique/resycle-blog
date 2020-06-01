@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { ApolloProvider } from "@apollo/react-hooks";
-import { Helmet } from "react-helmet";
+import { HeadProvider, Title, Meta } from "react-head";
 
 import { config } from "./config";
 import { client } from "./Utils/apollo";
@@ -19,23 +19,25 @@ const Application = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
-        <Helmet>
-          <title>{config.title}</title>
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            property="og:description"
-            content={config.description}
-          />
-          <meta name="title" property="og:title" content={config.title} />
-          <meta name="theme-color" content={config.header.backgroundColor} />
-          <meta
+        <HeadProvider>
+          {/* <div className="Home"> */}
+          <Title>{config.title}</Title>
+          <Meta charSet="utf-8" />
+          <Meta
             name="image"
             property="og:image"
             content="https://raw.githubusercontent.com/betheunique/resycle-images/master/logo.png"
           />
-          <meta name="author" content="Abhishekkumar Rai"></meta>
-        </Helmet>
+          <Meta
+            name="description"
+            property="og:description"
+            content={config.description}
+          />
+          <Meta name="title" property="og:title" content={config.title} />
+          <Meta name="theme-color" content={config.header.backgroundColor} />
+          <Meta name="author" content="Abhishekkumar Rai" />
+          {/* </div> */}
+        </HeadProvider>
         <ApolloProvider client={client}>
           <Router />
         </ApolloProvider>
