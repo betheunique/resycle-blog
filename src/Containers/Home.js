@@ -50,7 +50,6 @@ const onSubmitAPI = async (
 
   fetch(url, options).then(
     (response) => {
-      console.log(response);
       setEmail("");
       setSuccess(true);
       setTimeout(() => {
