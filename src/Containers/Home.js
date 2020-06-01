@@ -31,16 +31,11 @@ const onSubmit = async (
     return;
   }
 
-  const options = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-    body: JSON.stringify({ to: email }),
-  };
+  // Endpoint (GET instead POST) nasty workaround (never ever on real system)
   const url = new URL(config.email.url);
+  url.searchParams.append("to", email);
 
-  await fetch(url, options).then(
+  await fetch(url).then(
     (response) => {
       setEmail("");
       setSuccess(true);
