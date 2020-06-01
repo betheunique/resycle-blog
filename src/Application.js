@@ -24,6 +24,10 @@ const Application = () => {
           <meta charSet="utf-8" />
           <meta name="description" content={config.description} />
           <meta name="theme-color" content={config.header.backgroundColor} />
+          <meta
+            property="og:image"
+            content={require("../src/assets/img/linkedin_banner_image.png")}
+          />
         </Helmet>
         <ApolloProvider client={client}>
           <Router />

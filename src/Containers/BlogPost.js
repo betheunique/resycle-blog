@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import { Helmet } from "react-helmet";
 import moment from "moment";
 import Markdown from "markdown-to-jsx";
 import readingTime from "reading-time";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { GithubSelector, GithubCounter } from "react-reactions";
+import { GithubSelector } from "react-reactions";
 import { userClient } from "../Utils/apollo";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
@@ -66,7 +67,6 @@ export default function BlogHome() {
   const { loading, error, data } = useQuery(GET_POSTS);
   const reactionsContainer = useRef(null);
   const userToken = localStorage.getItem("githubToken");
-  console.log(post);
 
   const setReactionFun = useCallback((reactions) => {
     // {
@@ -191,6 +191,10 @@ export default function BlogHome() {
 
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content={post.title} />
+        {/* <meta property="og:description" content={post.body} /> */}
+      </Helmet>
       {post.title && (
         <PostContainer>
           <BackButton onClick={() => onBackClick()}>Back</BackButton>
@@ -238,12 +242,6 @@ export default function BlogHome() {
               )}
             </PostReaction>
           )}
-          <GithubCounter
-            ref={reactionsContainer}
-            counters={postReactions}
-            onSelect={(emoji) => toggleReaction(emoji)}
-            onAdd={() => setReactionPopup(!reactionPopup)}
-          />
         </PostContainer>
       )}
     </>
