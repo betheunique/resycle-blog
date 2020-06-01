@@ -192,8 +192,8 @@ export default function BlogHome() {
   return (
     <>
       <Helmet>
-        <meta property="og:title" content={post.title} />
-        {/* <meta property="og:description" content={post.body} /> */}
+        <meta name="title" property="og:title" content={post.title} />
+        {/* <meta name="description" property="og:description" content={post.body} /> */}
       </Helmet>
       {post.title && (
         <PostContainer>

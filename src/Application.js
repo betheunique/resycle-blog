@@ -22,14 +22,19 @@ const Application = () => {
         <Helmet>
           <title>{config.title}</title>
           <meta charSet="utf-8" />
-          <meta name="description" content={config.description} />
-          <meta property="og:title" content={config.title} />
-          <meta property="og:description" content={config.description} />
+          <meta
+            name="description"
+            property="og:description"
+            content={config.description}
+          />
+          <meta name="title" property="og:title" content={config.title} />
           <meta name="theme-color" content={config.header.backgroundColor} />
           <meta
+            name="image"
             property="og:image"
             content="https://raw.githubusercontent.com/betheunique/resycle-images/master/logo.png"
           />
+          <meta name="author" content="Abhishekkumar Rai"></meta>
         </Helmet>
         <ApolloProvider client={client}>
           <Router />
