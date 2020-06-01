@@ -26,10 +26,11 @@ export const config = {
     subtitleColor: "#37474f",
   },
 
-  // Email properties
-  email: {
-    serviceId: "default_service",
-    templateId: "template_wJtkVIiC",
-    userId: "user_o3bd1LLBuqVBjk5NPNeLE",
+  // Email API
+  emaiApi: {
+    apiKey:
+      "720BDE378F2EE749583734C9C48C5916FEAD1F1760A240D4D7FAFBE2F5F18350363C62D4AFC2DAD1FCE02E9DE5D2269A",
+    templateId: "8",
+    emailRequestUrl: "https://api.elasticemail.com/v2/email/send",
   },
 };

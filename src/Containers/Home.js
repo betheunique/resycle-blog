@@ -10,10 +10,9 @@ import { Form } from "../Components/Home/Form";
 import { Success } from "../Components/Home/Success";
 import { Failure } from "../Components/Home/Failure";
 import { config } from "../../src/config";
-import emailjs from "emailjs-com";
 
 // TODO: use reducer instead
-const onSubmit = async (
+const onSubmitAPI = async (
   email,
   setEmail,
   setSuccess,
@@ -21,9 +20,24 @@ const onSubmit = async (
   setFailure
 ) => {
   setDisable(true);
-  const params = {
-    to_email: email,
+
+  const options = {
+    method: "POST",
   };
+
+  const data = {
+    apiKey: config.emaiApi.apiKey,
+    template: config.emaiApi.templateId,
+    isTransactional: true,
+    to: email,
+  };
+
+  const url = new URL(config.emaiApi.emailRequestUrl);
+
+  for (let key in data) {
+    url.searchParams.append(key, data[key]);
+  }
+
   if (!validateEmail(email)) {
     setEmail("");
     setFailure(true);
@@ -33,25 +47,20 @@ const onSubmit = async (
     setDisable(false);
     return;
   }
-  emailjs
-    .send(
-      config.email.serviceId,
-      config.email.templateId,
-      params,
-      config.email.userId
-    )
-    .then(
-      (response) => {
-        setEmail("");
-        setSuccess(true);
-        setTimeout(() => {
-          setSuccess(false);
-        }, 2200);
-      },
-      (err) => {
-        setEmail("");
-      }
-    );
+
+  fetch(url, options).then(
+    (response) => {
+      console.log(response);
+      setEmail("");
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 2200);
+    },
+    (err) => {
+      setEmail("");
+    }
+  );
   setDisable(false);
 };
 
@@ -82,7 +91,7 @@ const Home = () => {
           <Button
             disabled={disable}
             onClick={() => {
-              onSubmit(email, setEmail, setSuccess, setDisable, setFailure);
+              onSubmitAPI(email, setEmail, setSuccess, setDisable, setFailure);
             }}
           >
             Subscribe
