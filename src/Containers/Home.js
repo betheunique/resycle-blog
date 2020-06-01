@@ -11,6 +11,7 @@ import { Success } from "../Components/Home/Success";
 import { config } from "../../src/config";
 import emailjs from "emailjs-com";
 
+// TODO: use reducer instead
 const onSubmit = async (email, setEmail, setSuccess, setDisable) => {
   setDisable(true);
   const params = {
