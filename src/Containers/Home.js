@@ -10,7 +10,6 @@ import { Form } from "../Components/Home/Form";
 import { Success } from "../Components/Home/Success";
 import { Failure } from "../Components/Home/Failure";
 import { config } from "../../src/config";
-import emailjs from "emailjs-com";
 
 // TODO: use reducer instead
 const onSubmit = async (
@@ -21,9 +20,6 @@ const onSubmit = async (
   setFailure
 ) => {
   setDisable(true);
-  const params = {
-    to_email: email,
-  };
 
   if (!validateEmail(email)) {
     setEmail("");
@@ -34,25 +30,28 @@ const onSubmit = async (
     setDisable(false);
     return;
   }
-  emailjs
-    .send(
-      config.email.serviceId,
-      config.email.templateId,
-      params,
-      config.email.userId
-    )
-    .then(
-      (response) => {
-        setEmail("");
-        setSuccess(true);
-        setTimeout(() => {
-          setSuccess(false);
-        }, 2200);
-      },
-      (err) => {
-        setEmail("");
-      }
-    );
+
+  const options = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify({ to: email }),
+  };
+  const url = new URL(config.email.url);
+
+  await fetch(url, options).then(
+    (response) => {
+      setEmail("");
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 2200);
+    },
+    (err) => {
+      setEmail("");
+    }
+  );
   setDisable(false);
 };
 

@@ -28,8 +28,6 @@ export const config = {
 
   // Email properties
   email: {
-    serviceId: "default_service",
-    templateId: "template_wJtkVIiC",
-    userId: "user_o3bd1LLBuqVBjk5NPNeLE",
+    url: "https://function.resycle.io/.netlify/functions/send-email",
   },
 };
