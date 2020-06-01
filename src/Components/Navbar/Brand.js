@@ -5,7 +5,7 @@ import { animated } from "react-spring";
 import logo from "../../assets/img/logo.png";
 
 const Brand = ({ style }) => {
-  return <Image src={logo} alt="Oarraylabs" style={style} />;
+  return <Image src={logo} alt="Resycle.io" style={style} />;
 };
 
 export default Brand;

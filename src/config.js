@@ -15,7 +15,7 @@ export const config = {
   OAuthClientID: "Iv1.9f40fd53257d4102",
   OAuthSecret: "cc3db76ffe9848c92d83172807eececa79f0eb22",
 
-  title: "Resycle.io | Track, Offset, Minimize & Earn",
+  title: "Resycle.io | Track, Offset & Minimize",
 
   description: "On a mission to reduce the carbon footprint on the planet",
 
@@ -24,5 +24,12 @@ export const config = {
     backgroundColor: `linear-gradient(0deg, rgba(39,102,103,1) 0%, rgba(64,145,78,1) 100%)`, // can be a CSS gradient
     titleColor: "#ff5252",
     subtitleColor: "#37474f",
+  },
+
+  // Email properties
+  email: {
+    serviceId: "default_service",
+    templateId: "template_wJtkVIiC",
+    userId: "user_o3bd1LLBuqVBjk5NPNeLE",
   },
 };
