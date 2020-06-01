@@ -24,7 +24,6 @@ const onSubmit = async (
   const params = {
     to_email: email,
   };
-  console.log(validateEmail(email));
   if (!validateEmail(email)) {
     setEmail("");
     setFailure(true);
@@ -43,6 +42,7 @@ const onSubmit = async (
     )
     .then(
       (response) => {
+        setEmail("");
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
