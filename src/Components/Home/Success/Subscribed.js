@@ -13,7 +13,7 @@ const StyledIcon = styled.div`
 `;
 
 const StyledText = styled.h1`
-  color: #22bb33;
+  color: #f0ad4e;
   font-size: 13pt;
   padding: 0 0.3em;
   font-weight: 600;
@@ -21,11 +21,11 @@ const StyledText = styled.h1`
   text-align: center;
 `;
 
-export const Success = ({ msg }) => (
+export const Subscribed = ({ msg }) => (
   <IconContext.Provider
     value={{
       style: {
-        color: "#22bb33",
+        color: "#f0ad4e",
         fontSize: "18px",
         textAlign: "center",
         margin: "0 0 0 0.3em",

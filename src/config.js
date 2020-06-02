@@ -30,4 +30,7 @@ export const config = {
   email: {
     url: "https://function.resycle.io/.netlify/functions/send-email",
   },
+  api: {
+    url: "https://api.resycle.io/api/user",
+  },
 };

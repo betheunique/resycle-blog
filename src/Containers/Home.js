@@ -8,6 +8,7 @@ import { VideoContainer } from "../Components/Home/Video";
 import { Button } from "../Components/Home/Button/Button";
 import { Form } from "../Components/Home/Form";
 import { Success } from "../Components/Home/Success";
+import { Subscribed } from "../Components/Home/Success";
 import { Failure } from "../Components/Home/Failure";
 import { config } from "../../src/config";
 
@@ -17,7 +18,8 @@ const onSubmit = async (
   setEmail,
   setSuccess,
   setDisable,
-  setFailure
+  setFailure,
+  setSubscribed
 ) => {
   setDisable(true);
 
@@ -32,18 +34,30 @@ const onSubmit = async (
   }
 
   // Endpoint (GET instead POST) nasty workaround (never ever on real system)
-  const url = new URL(config.email.url);
-  url.searchParams.append("to", email);
+  const url = new URL(config.api.url);
+  url.searchParams.append("email", email);
 
   await fetch(url).then(
     (response) => {
+      response.json().then((body) => {
+        console.log(body.result);
+        if (body.result === "exsists") {
+          setSubscribed(true);
+          setSubscribed(true);
+          setTimeout(() => {
+            setSubscribed(false);
+          }, 2200);
+        } else {
+          setSuccess(true);
+          setTimeout(() => {
+            setSuccess(false);
+          }, 2200);
+        }
+      });
       setEmail("");
-      setSuccess(true);
-      setTimeout(() => {
-        setSuccess(false);
-      }, 2200);
     },
     (err) => {
+      console.log(err);
       setEmail("");
     }
   );
@@ -61,6 +75,7 @@ const Home = () => {
   const [disable, setDisable] = useState(false);
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
 
   return (
     <>
@@ -77,12 +92,20 @@ const Home = () => {
           <Button
             disabled={disable}
             onClick={() => {
-              onSubmit(email, setEmail, setSuccess, setDisable, setFailure);
+              onSubmit(
+                email,
+                setEmail,
+                setSuccess,
+                setDisable,
+                setFailure,
+                setSubscribed
+              );
             }}
           >
             Subscribe
           </Button>
-          {success ? <Success /> : null}
+          {success ? <Success msg="Thank you!" /> : null}
+          {subscribed ? <Subscribed msg="You already Subscribed!" /> : null}
           {failure ? <Failure /> : null}
         </Form>
       </HomeContainer>

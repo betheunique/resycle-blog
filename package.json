@@ -1,7 +1,7 @@
 {
   "name": "resycle-io",
   "homepage": "http://resycle.io",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -35,7 +35,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "react-scripts start -p 8000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
