@@ -43,7 +43,6 @@ const onSubmit = async (
         console.log(body.result);
         if (body.result === "exsists") {
           setSubscribed(true);
-          setSubscribed(true);
           setTimeout(() => {
             setSubscribed(false);
           }, 2200);
@@ -105,7 +104,7 @@ const Home = () => {
             Subscribe
           </Button>
           {success ? <Success msg="Thank you!" /> : null}
-          {subscribed ? <Subscribed msg="You already Subscribed!" /> : null}
+          {subscribed ? <Subscribed msg="You're already Subscribed!" /> : null}
           {failure ? <Failure /> : null}
         </Form>
       </HomeContainer>

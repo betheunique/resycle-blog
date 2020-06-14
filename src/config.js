@@ -15,7 +15,8 @@ export const config = {
   OAuthClientID: "Iv1.9f40fd53257d4102",
   OAuthSecret: "cc3db76ffe9848c92d83172807eececa79f0eb22",
 
-  title: "Resycle.io | Track, Offset & Minimize your carbon footprints",
+  title:
+    "Resycle.io | Track, Offset & Minimize your plastic consumption and carbon footprints",
 
   description: "On a mission to reduce the carbon footprints on the planet",
 
