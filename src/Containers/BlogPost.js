@@ -184,9 +184,11 @@ export default function BlogHome() {
 
   const onBackClick = () => {
     // ifthe previous page does not exist in the history list. this method to load the previous (or next) URL in the history list.
-    window.history.go();
+    // window.history.go();
     // The back() method loads the previous URL in the history list.
-    window.history.back();
+    // window.history.back();
+
+    window.location.href = "/blog/";
   };
 
   return (

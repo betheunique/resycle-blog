@@ -35,7 +35,6 @@ const Application = () => {
           <Meta name="title" property="og:title" content={config.title} />
           <Meta name="theme-color" content={config.header.backgroundColor} />
           <Meta name="author" content="Abhishekkumar Rai" />
-          {/* </div> */}
         </HeadProvider>
         <ApolloProvider client={client}>
           <Router />
