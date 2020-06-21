@@ -25,7 +25,7 @@ const Application = () => {
           <Meta
             name="image"
             property="og:image"
-            content="https://raw.githubusercontent.com/betheunique/resycle-images/master/logo.png"
+            content="https://user-images.githubusercontent.com/17061879/85234684-fe736400-b406-11ea-9245-d6ed4e6f1236.png"
           />
           <Meta
             name="description"

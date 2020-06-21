@@ -191,6 +191,16 @@ export default function BlogHome() {
     window.location.href = "/blog/";
   };
 
+  const getAuthorName = (author) => {
+    if (author === "betheunique") {
+      return "Abhishekkumar Rai";
+    } else if (author === "Vedant-R") {
+      return "Vedant Ruparelia";
+    } else {
+      return author;
+    }
+  };
+
   return (
     <>
       <HeadProvider>
@@ -208,11 +218,7 @@ export default function BlogHome() {
                 alt={post.author.login}
               />
               <div>
-                <AuthorName>
-                  {post.author.login === "betheunique"
-                    ? "Abhishekkumar Rai"
-                    : post.author.login}
-                </AuthorName>
+                <AuthorName>{getAuthorName(post.author.login)}</AuthorName>
                 <PostDate>
                   {moment(post.updatedAt).format("DD MMM YYYY")} .
                   {readingTime(post.body).minutes} Min Read .
